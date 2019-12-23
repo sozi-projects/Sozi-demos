@@ -1,0 +1,94 @@
+
+
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sozi: layers demo</title>
+        <style>
+            body {
+                display: flex;
+                width: 100vh;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+            }
+
+            iframe {
+                border: none;
+            }
+
+            .sozi-frame-preview {
+                display: flex;
+                flex-direction: column;
+                padding: 0.5rem 1rem;
+            }
+
+            .sozi-frame-previews-prev-next {
+                display: flex;
+                flex: auto;
+            }
+
+            .sozi-current-frame {
+                flex: auto;
+                margin-bottom: 0.5rem;
+                width: calc(50vw - 1rem - 2px);
+            }
+
+            .sozi-previous-frame {
+                margin-right: 0.5rem;
+            }
+
+            .sozi-previous-frame, .sozi-next-frame {
+                width: calc(25vw - 0.75rem - 2px);
+            }
+
+            .sozi-controls {
+                text-align: center;
+                margin-bottom: 0.5rem;
+            }
+
+            .sozi-controls input {
+                font-size: 150%;
+                font-family: sans-serif;
+            }
+
+            .sozi-notes {
+                min-width: calc(50vw - 3rem);
+                height: calc(100vh - 1rem);
+                padding: 0.5rem 1rem;
+                background: rgb(230, 230, 230);
+            }
+
+            .sozi-current-index {
+                margin: 0 0.5rem 0 1rem;
+            }
+
+            .sozi-presentation-length {
+                margin: 0 1rem 0 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="sozi-frame-preview">
+            <iframe class="sozi-current-frame" src="parallax.sozi.html"></iframe>
+            <div class="sozi-controls">
+                <input type="button" id="sozi-previous-btn" value="&laquo;" title="Previous">
+                <span class="sozi-current-index"></span>/<span class="sozi-presentation-length"></span>
+                <input type="button" id="sozi-next-btn" value="&raquo;" title="Next">
+            </div>
+            <div class="sozi-frame-previews-prev-next">
+                <iframe class="sozi-previous-frame" src="parallax.sozi.html"></iframe>
+                <iframe class="sozi-next-frame"     src="parallax.sozi.html"></iframe>
+            </div>
+        </div>
+        <div class="sozi-notes">
+            <h1 class="sozi-notes-title"></h1>
+            <div class="sozi-notes-body"></div>
+        </div>
+
+        <script>"use strict";var previews=[{index:0},{index:-1},{index:1}];var presWindow;var presLength=0;function updatePreview(p){if(p.index>=0&&p.index<presLength){p.window.postMessage({name:"jumpToFrame",args:[p.index]},"*")}else{p.window.postMessage({name:"enableBlankScreen"},"*")}}function updateFrameData(_ref){var index=_ref.index,title=_ref.title,notes=_ref.notes;document.querySelector(".sozi-current-index").innerHTML=index+1;document.querySelector(".sozi-presentation-length").innerHTML=presLength;document.querySelector(".sozi-notes-title").innerHTML=title;if(typeof notes==="string"){document.querySelector(".sozi-notes-body").innerHTML=notes}}window.addEventListener("message",function(evt){switch(evt.data.name){case"loaded":presLength=evt.data.length;evt.source.postMessage({name:evt.source===presWindow?"notifyOnFrameChange":"setPresenterMode"},"*");break;case"frameChange":previews[0].index=evt.data.index;previews[1].index=evt.data.index-1;previews[2].index=evt.data.index+1;previews.forEach(updatePreview);updateFrameData(evt.data)}});window.addEventListener("load",function(){var iframes=document.querySelectorAll("iframe");previews.forEach(function(p,i){p.window=iframes[i].contentWindow;p.window.postMessage({name:"notifyOnLoad"},"*")});presWindow=window.open(document.querySelector("iframe").src,"sozi-presentation","width=600, height=400, scrollbars=yes");try{presWindow.focus();presWindow.postMessage({name:"notifyOnLoad"},"*");document.getElementById("sozi-previous-btn").addEventListener("click",function(){presWindow.postMessage({name:"moveToPrevious"},"*")},false);document.getElementById("sozi-next-btn").addEventListener("click",function(){presWindow.postMessage({name:"moveToNext"},"*")},false)}catch(e){alert("Could not open presentation window. Please allow popups for this site and refresh this page.")}},false);window.addEventListener("keydown",function(evt){if(evt.altKey||evt.ctrlKey||evt.metaKey){return}switch(evt.keyCode){case 36:if(evt.shiftKey){presWindow.postMessage({name:"jumpToFirst"},"*")}else{presWindow.postMessage({name:"moveToFirst"},"*")}break;case 35:if(evt.shiftKey){presWindow.postMessage({name:"jumpToLast"},"*")}else{presWindow.postMessage({name:"moveToLast"},"*")}break;case 38:case 33:case 37:if(evt.shiftKey){presWindow.postMessage({name:"jumpToPrevious"},"*")}else{presWindow.postMessage({name:"moveToPrevious"},"*")}break;case 40:case 34:case 39:case 13:case 32:if(evt.shiftKey){presWindow.postMessage({name:"jumpToNext"},"*")}else{presWindow.postMessage({name:"moveToNext"},"*")}break;default:return}evt.stopPropagation();evt.preventDefault()});window.addEventListener("keypress",function(evt){if(evt.altKey||evt.ctrlKey||evt.metaKey){return}switch(evt.charCode||evt.which){case 46:presWindow.postMessage({name:"toggleBlankScreen"},"*");break;default:return}evt.stopPropagation();evt.preventDefault()});</script>
+    </body>
+</html>
