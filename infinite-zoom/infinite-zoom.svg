@@ -17,7 +17,7 @@
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="infinite-zoom.svg">
   <title
-     id="title4599">Infinite Zoom with Sozi</title>
+     id="title4599">Sozi demo: Infinite Zoom</title>
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -28,7 +28,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="232.07001"
+     inkscape:cx="145.44943"
      inkscape:cy="139.78322"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -62,7 +62,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>Infinite Zoom with Sozi</dc:title>
+        <dc:title>Sozi demo: Infinite Zoom</dc:title>
         <dc:date>2019-12-23</dc:date>
         <dc:creator>
           <cc:Agent>
@@ -71,7 +71,7 @@
         </dc:creator>
         <dc:rights>
           <cc:Agent>
-            <dc:title></dc:title>
+            <dc:title />
           </cc:Agent>
         </dc:rights>
         <cc:license
