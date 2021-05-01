@@ -40,7 +40,7 @@
           "outlineElementId": "rect-night",
           "transitionTimingFunction": "linear",
           "transitionRelativeZoom": 0,
-          "transitionPathId": "path-night-to-day"
+          "transitionPathId": "path-day-to-night"
         },
         "__sozi_auto__": {
           "link": false,
@@ -48,17 +48,17 @@
           "outlineElementId": "rect-night",
           "transitionTimingFunction": "linear",
           "transitionRelativeZoom": 0,
-          "transitionPathId": "path-night-to-day"
+          "transitionPathId": "path-day-to-night"
         }
       },
       "cameraStates": {
         "layer3": {
-          "cx": 278.96063232421875,
-          "cy": 338.99346923828125,
-          "width": 319.6680439900435,
-          "height": 239.7510253631385,
+          "cx": 280.9259948730469,
+          "cy": 340.2823791503906,
+          "width": 319.6680603027344,
+          "height": 239.75103759765625,
           "opacity": 1,
-          "angle": -62.33670234862072,
+          "angle": -62.33670425415039,
           "clipped": true,
           "clipXOffset": 0,
           "clipYOffset": 0,
@@ -66,12 +66,12 @@
           "clipHeightFactor": 1
         },
         "__sozi_auto__": {
-          "cx": 278.96063232421875,
-          "cy": 338.99346923828125,
-          "width": 319.6680439900435,
-          "height": 239.7510253631385,
+          "cx": 280.9259948730469,
+          "cy": 340.2823791503906,
+          "width": 319.66806030273443,
+          "height": 239.7510375976563,
           "opacity": 1,
-          "angle": -62.33670234862072,
+          "angle": -62.33670425415039,
           "clipped": true,
           "clipXOffset": 0,
           "clipYOffset": 0,
@@ -83,16 +83,16 @@
         "layer3": {
           "deltaX": 0,
           "deltaY": 0,
-          "widthFactor": 1.0000000000000004,
-          "heightFactor": 1.0000000000000004,
-          "deltaAngle": -8.526512829121202e-14
+          "widthFactor": 1,
+          "heightFactor": 1,
+          "deltaAngle": 0
         },
         "__sozi_auto__": {
           "deltaX": 0,
           "deltaY": 0,
-          "widthFactor": 1.0000000000000004,
-          "heightFactor": 1.0000000000000004,
-          "deltaAngle": -8.526512829121202e-14
+          "widthFactor": 1.0000000000000002,
+          "heightFactor": 1.0000000000000002,
+          "deltaAngle": 0
         }
       }
     },
@@ -126,12 +126,12 @@
       },
       "cameraStates": {
         "layer3": {
-          "cx": 802.101318359375,
-          "cy": 321.5636291503906,
-          "width": 319.66807066533,
-          "height": 239.7510453696027,
+          "cx": 802.117431640625,
+          "cy": 322.9383239746094,
+          "width": 319.66806030273426,
+          "height": 239.7510375976562,
           "opacity": 1,
-          "angle": 58.55507918512279,
+          "angle": 58.55507278442383,
           "clipped": true,
           "clipXOffset": 0,
           "clipYOffset": 0,
@@ -139,12 +139,12 @@
           "clipHeightFactor": 1
         },
         "__sozi_auto__": {
-          "cx": 802.101318359375,
-          "cy": 321.5636291503906,
-          "width": 319.66807066533,
-          "height": 239.7510453696027,
+          "cx": 802.117431640625,
+          "cy": 322.9383239746094,
+          "width": 319.66806030273426,
+          "height": 239.7510375976562,
           "opacity": 1,
-          "angle": 58.55507918512279,
+          "angle": 58.55507278442383,
           "clipped": true,
           "clipXOffset": 0,
           "clipYOffset": 0,
@@ -156,28 +156,29 @@
         "layer3": {
           "deltaX": 0,
           "deltaY": 0,
-          "widthFactor": 1.0000000000000002,
-          "heightFactor": 1.0000000000000002,
-          "deltaAngle": -2.842170943040401e-14
+          "widthFactor": 0.9999999999999998,
+          "heightFactor": 0.9999999999999999,
+          "deltaAngle": 0
         },
         "__sozi_auto__": {
           "deltaX": 0,
           "deltaY": 0,
-          "widthFactor": 1.0000000000000002,
-          "heightFactor": 1.0000000000000002,
-          "deltaAngle": -2.842170943040401e-14
+          "widthFactor": 0.9999999999999998,
+          "heightFactor": 0.9999999999999999,
+          "deltaAngle": 0
         }
       }
     }
   ],
   "elementsToHide": [
-    "rect-night",
     "rect-day",
-    "path-night-to-day"
+    "path-night-to-day",
+    "path-day-to-night",
+    "rect-night"
   ],
   "customFiles": [],
   "selectedFrames": [
-    "frame6868"
+    "frame6512"
   ],
   "selectedLayers": [
     "layer3",
